@@ -2,9 +2,11 @@ name: L1
 
 on:
   push:
-    branches: [ "main" ]
+    paths:
+      - L1/**
   pull_request:
-    branches: [ "main" ]
+    paths:
+      - L1/**
 
 jobs:
   build:
