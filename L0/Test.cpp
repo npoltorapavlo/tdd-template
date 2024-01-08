@@ -1,8 +1,6 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
-using namespace std;
-
 using ::testing::Eq;
 using ::testing::NiceMock;
 using ::testing::Return;
@@ -20,11 +18,12 @@ public:
 
 TEST(AShape, ReturnsArea)
 {
-    // Arrange
+    // NiceMock tracks interactions only for methods on which expectations exist
     NiceMock<ShapeMock> shape;
+    // Use ON_CALL by default, and only use EXPECT_CALL when intend to verify that the call is made
     ON_CALL(shape, Area())
         .WillByDefault(Return(10));
 
-    // Act-Assert
+    // One Assert per Test
     EXPECT_THAT(shape.Area(), Eq(10));
 }
