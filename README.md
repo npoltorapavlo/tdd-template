@@ -1,4 +1,4 @@
-:grey_exclamation: L0 - in-memory tests, code in the assembly, and nothing else. L1 might require a database or file system, but no deployment. L2 requires deployment and might mock some dependencies. L3 full deployment.
+L0 - in-memory tests. L1 database/file system, no deployment. L2 deployment + mock. L3 full deployment.
 
 [Act](https://github.com/nektos/act)\/docker to run the workflow locally ([PAT](https://github.com/settings/tokens) needed):
 
